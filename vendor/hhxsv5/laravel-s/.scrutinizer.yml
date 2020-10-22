@@ -1,0 +1,33 @@
+checks:
+  php: true
+filter:
+  excluded_paths:
+    - tests/*
+build:
+  environment:
+    php: 7.1.0
+  nodes:
+    analysis:
+      tests:
+        override:
+          - php-scrutinizer-run
+          - phpcs-run src/*
+    my-tests:
+      environment:
+        php:
+          version: 7.1.0
+          pecl_extensions:
+            - swoole
+      dependencies:
+        before:
+          - composer install
+      tests:
+        override:
+          - composer test
+    coverage:
+      tests:
+        override:
+          - command: composer test
+            coverage:
+              file: coverage/coverage.xml
+              format: clover

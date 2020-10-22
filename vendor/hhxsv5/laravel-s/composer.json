@@ -1,0 +1,76 @@
+{
+  "name": "hhxsv5/laravel-s",
+  "type": "library",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/hhxsv5/laravel-s/issues",
+    "source": "https://github.com/hhxsv5/laravel-s"
+  },
+  "description": "🚀 LaravelS is an out-of-the-box adapter between Swoole and Laravel/Lumen.",
+  "keywords": [
+    "laravels",
+    "laravel-s",
+    "swoole",
+    "laravel",
+    "lumen",
+    "async",
+    "coroutine",
+    "server",
+    "http",
+    "websocket",
+    "tcp",
+    "udp",
+    "process",
+    "task",
+    "timer",
+    "inotify",
+    "performance"
+  ],
+  "homepage": "https://github.com/hhxsv5/laravel-s",
+  "authors": [
+    {
+      "name": "Xie Biao",
+      "email": "hhxsv5@sina.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "symfony/console": ">=2.7.0",
+    "ext-json": "*",
+    "ext-pcntl": "*",
+    "swoole/ide-helper": "@dev",
+    "ext-curl": "*"
+  },
+  "suggest": {
+    "ext-swoole": "Coroutine based Async PHP programming framework, require >= 1.7.19.",
+    "ext-inotify": "Inotify, used to real-time reload."
+  },
+  "autoload": {
+    "psr-4": {
+      "Hhxsv5\\LaravelS\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Hhxsv5\\LaravelS\\Illuminate\\LaravelSServiceProvider"
+      ]
+    }
+  },
+  "bin": [
+    "bin/fswatch"
+  ],
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "require-dev": {
+    "phpunit/phpunit": ">=4.8.36"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hhxsv5\\LaravelS\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit -c phpunit.xml"
+  }
+}
